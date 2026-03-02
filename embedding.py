@@ -20,10 +20,11 @@ pickle.dump(ref_dictt, f)
 f.close()
 
 try:
-    f = open("ref_emb.pkl", "rb")
+    f = open("ref_embed.pkl", "rb")
     embed_dict = pickle.load(f)
     f.close()
-except:
+except Exception as e:
+    print('exception:', e)
     embed_dict = {}
 
 mode = input("Use webcam (w) or image file (f)? ").strip().lower()
@@ -110,6 +111,9 @@ else:
                 print("Program ended.")
                 cv2.destroyAllWindows()
                 break
+            
+for i in range(len(embed_dict)):
+    print(f"ID: {list(embed_dict.keys())[i]}, Name: {ref_dictt[list(embed_dict.keys())[i]]}, Embeddings: {len(embed_dict[list(embed_dict.keys())[i]])}")
 
 f=open("ref_embed.pkl","wb")
 pickle.dump(embed_dict,f)
