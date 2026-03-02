@@ -1,0 +1,9 @@
+# Pickle data files (face embeddings and name references)
+*.pkl
+
+# Virtual environment
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
