@@ -11,7 +11,7 @@ f=open("ref_embed.pkl","rb")
 embed_dictt=pickle.load(f)
 f.close()
 
-print("Reference dictionary loaded: ", ref_dictt);
+print("Reference dictionary loaded: ", ref_dictt)
 
 known_face_encodings = []
 known_face_ids = []
