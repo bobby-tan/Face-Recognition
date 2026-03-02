@@ -34,7 +34,7 @@ for i in range(5):
         
         cv2.imshow("Capturing", frame)
         small_frame = cv2.resize(frame, (0, 0), fx=0.25, fy=0.25)
-        rgb_small_frame = small_frame[:, :, ::-1]
+        rgb_small_frame = cv2.cvtColor(small_frame, cv2.COLOR_BGR2RGB)
         
         key = cv2.waitKey(1)
         if key == ord('s') : 
